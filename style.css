@@ -941,6 +941,23 @@ section {
   margin-right: 8px;
 }
 
+.hardware-table .hw-photo {
+  width: 100px;
+  padding: 8px 0 8px 16px;
+}
+
+.hardware-table .hw-photo img {
+  display: block;
+  width: 100px;
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.15s ease;
+}
+
+.hardware-table .hw-photo a:hover img {
+  transform: scale(1.05);
+}
+
 .hardware-total {
   background: var(--bg-code);
 }
@@ -1137,5 +1154,14 @@ footer .footer-links a:hover {
   .hardware-table th,
   .hardware-table td {
     padding: 12px 16px;
+  }
+
+  .hardware-table .hw-photo {
+    width: 64px;
+    padding: 8px 0 8px 12px;
+  }
+
+  .hardware-table .hw-photo img {
+    width: 64px;
   }
 }

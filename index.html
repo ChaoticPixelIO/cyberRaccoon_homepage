@@ -275,30 +275,35 @@
     <div class="hardware-table-wrap">
       <table class="hardware-table">
         <thead>
-          <tr><th>Item</th><th>Cost</th><th>Required?</th></tr>
+          <tr><th class="hw-photo-col"></th><th>Item</th><th>Cost</th><th>Required?</th></tr>
         </thead>
         <tbody>
           <tr>
+            <td class="hw-photo"><a href="images/raspberry-pi-5.jpg" target="_blank" rel="noopener"><img src="images/raspberry-pi-5.jpg" alt="Raspberry Pi 5" loading="lazy"></a></td>
             <td><span class="item-icon">&#129294;</span> Raspberry Pi 5 (or 4B)</td>
             <td>$60 &ndash; $80</td>
             <td><span class="hw-required">Required</span></td>
           </tr>
           <tr>
+            <td class="hw-photo"><a href="images/hdmi-csi-bridge.jpg" target="_blank" rel="noopener"><img src="images/hdmi-csi-bridge.jpg" alt="TC358743 HDMI-to-CSI bridge" loading="lazy"></a></td>
             <td><span class="item-icon">&#128250;</span> HDMI-to-CSI Bridge (TC358743)</td>
             <td>$15 &ndash; $25</td>
             <td><span class="hw-optional">Optional</span> &mdash; best-tested capture path; uses the Pi&rsquo;s CSI port, no USB needed</td>
           </tr>
           <tr>
+            <td class="hw-photo"><a href="images/usb-video-capture.jpg" target="_blank" rel="noopener"><img src="images/usb-video-capture.jpg" alt="USB HDMI capture card" loading="lazy"></a></td>
             <td><span class="item-icon">&#128248;</span> USB HDMI Capture Card</td>
             <td>$10 &ndash; $20</td>
             <td><span class="hw-optional">Optional</span> &mdash; alternative to the CSI bridge; not needed if using AirPlay</td>
           </tr>
           <tr>
+            <td class="hw-photo"><a href="images/usb-splitter.jpg" target="_blank" rel="noopener"><img src="images/usb-splitter.jpg" alt="USB power/data splitter cable" loading="lazy"></a></td>
             <td><span class="item-icon">&#128268;</span> USB power/data splitter cable</td>
             <td>$5 &ndash; $15</td>
             <td><span class="hw-recommended">Recommended</span> for USB HID &mdash; external power to the Pi, separate data cable to the target. Lets you swap the data cable to another target without power-cycling the Pi. A single USB cable (Pi USB-C to target USB-C or USB-A) also works &mdash; carries power + data, but the Pi may log under-voltage and changing target means powering off the Pi. Not needed at all if you use Bluetooth HID.</td>
           </tr>
           <tr class="hardware-total">
+            <td class="hw-photo"></td>
             <td>Minimum (Pi only)</td>
             <td>~$60</td>
             <td>AirPlay capture + Bluetooth HID &mdash; macOS targets only</td>
