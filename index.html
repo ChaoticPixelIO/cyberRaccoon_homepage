@@ -294,9 +294,9 @@
             <td><span class="hw-optional">Optional</span> &mdash; alternative to the CSI bridge; not needed if using AirPlay</td>
           </tr>
           <tr>
-            <td><span class="item-icon">&#128268;</span> USB-C OTG Cable / Splitter</td>
+            <td><span class="item-icon">&#128268;</span> USB power/data splitter cable</td>
             <td>$5 &ndash; $15</td>
-            <td><span class="hw-optional">Optional</span> &mdash; not needed if using Bluetooth HID. On Pi 5, single-cable USB-C OTG is affected by a <code>dwc2</code> kernel bug; a USB power/data splitter cable is the documented workaround.</td>
+            <td><span class="hw-recommended">Recommended</span> for USB HID &mdash; external power to the Pi, separate data cable to the target. Lets you swap the data cable to another target without power-cycling the Pi. A single USB cable (Pi USB-C to target USB-C or USB-A) also works &mdash; carries power + data, but the Pi may log under-voltage and changing target means powering off the Pi. Not needed at all if you use Bluetooth HID.</td>
           </tr>
           <tr class="hardware-total">
             <td>Minimum (Pi only)</td>

@@ -905,6 +905,12 @@ section {
   font-size: 0.8rem;
 }
 
+.hw-recommended {
+  color: var(--accent2);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
 .hardware-table {
   width: 100%;
   border-collapse: collapse;
