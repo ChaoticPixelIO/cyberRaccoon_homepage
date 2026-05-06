@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberRaccoon — AI Computer Control from a Raspberry Pi</title>
+  <meta name="description" content="Hardware-level AI agent that controls any computer via Raspberry Pi. Works on BIOS, legacy systems, and locked-down machines where no software agent can.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav>
+  <div class="container">
+    <a href="#" class="logo">Cyber<span>Raccoon</span></a>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#use-cases">Use Cases</a></li>
+      <li><a href="#quickstart">Quick Start</a></li>
+      <li><a href="https://github.com/ChaoticPixelIO/cyberRaccoon" target="_blank">GitHub</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Open Source &middot; Apache 2.0</div>
+    <h1>AI Computer Control<br>from a <span class="accent">Raspberry Pi</span></h1>
+    <p class="subtitle">
+      A hardware-level AI agent that controls any computer &mdash; without installing anything on it.
+    </p>
+    <p class="differentiator">Works where no software agent can.</p>
+    <div class="hero-install" role="group" aria-label="Install command">
+      <span class="hero-install-prompt" aria-hidden="true">$</span>
+      <code class="hero-install-cmd">curl -sSL https://cyberraccoon.ai/install.sh | bash</code>
+      <button type="button" class="hero-install-copy" aria-label="Copy install command">
+        <svg class="hero-install-copy-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+          <path fill="currentColor" d="M5 1.75A1.75 1.75 0 0 1 6.75 0h7.5A1.75 1.75 0 0 1 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25v-7.5Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-7.5Z"/>
+          <path fill="currentColor" d="M2 5.25c0-.966.784-1.75 1.75-1.75h.5a.75.75 0 0 1 0 1.5h-.5a.25.25 0 0 0-.25.25v9c0 .138.112.25.25.25h9a.25.25 0 0 0 .25-.25v-.5a.75.75 0 0 1 1.5 0v.5A1.75 1.75 0 0 1 12.75 16h-9A1.75 1.75 0 0 1 2 14.25v-9Z"/>
+        </svg>
+        <span class="hero-install-copy-label">Copy</span>
+      </button>
+    </div>
+    <p class="hero-install-note">Run on a Raspberry Pi &middot; installs the package, walks you through hardware setup, registers the Web UI service.</p>
+    <div class="hero-buttons">
+      <a href="#quickstart" class="btn btn-primary">Get Started</a>
+      <a href="https://github.com/ChaoticPixelIO/cyberRaccoon" class="btn btn-secondary" target="_blank">
+        View on GitHub
+      </a>
+    </div>
+    <div class="github-stars">
+      <a class="github-button"
+         href="https://github.com/ChaoticPixelIO/cyberRaccoon"
+         data-size="large"
+         data-show-count="true"
+         aria-label="Star CyberRaccoon on GitHub">Star</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── How It Works ── -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">Capture. Think. Act.</h2>
+      <p class="section-desc">
+        CyberRaccoon runs on a Raspberry Pi connected to a target computer.
+        It captures the screen, sends it to a vision LLM, and executes actions
+        as real USB or Bluetooth HID input &mdash; just like a human sitting in front of the computer.
+      </p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">&#128248;</div>
+        <div class="step-number">Step 1</div>
+        <h3>Capture</h3>
+        <p>Screen is captured via HDMI-to-CSI bridge, USB HDMI card, Raspberry Pi camera, or wirelessly via AirPlay.</p>
+      </div>
+      <div class="step-arrow">&#8594;</div>
+      <div class="step">
+        <div class="step-icon">&#129504;</div>
+        <div class="step-number">Step 2</div>
+        <h3>Think</h3>
+        <p>Screenshot is sent to a vision LLM (Anthropic, OpenAI, or compatible APIs) which decides the next action.</p>
+      </div>
+      <div class="step-arrow">&#8594;</div>
+      <div class="step">
+        <div class="step-icon">&#9000;&#65039;</div>
+        <div class="step-number">Step 3</div>
+        <h3>Act</h3>
+        <p>The action is executed as real USB or Bluetooth HID input. The target sees a normal keyboard and mouse.</p>
+      </div>
+    </div>
+    <ul class="intro-highlights">
+      <li><span class="check">&#10003;</span> Zero software installation on the target</li>
+      <li><span class="check">&#10003;</span> Works on any OS &mdash; Windows, macOS, Linux, even BIOS</li>
+      <li><span class="check">&#10003;</span> Indistinguishable from a real human user</li>
+      <li><span class="check">&#10003;</span> Fully wireless option via AirPlay + Bluetooth</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── Web UI ── -->
+<section class="webui" id="webui">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Control Interface</p>
+      <h2 class="section-title">Manage tasks from your browser</h2>
+      <p class="section-desc">A built-in web UI for remote task management, live screenshot preview, and real-time step logs.</p>
+    </div>
+    <div class="browser-mockup">
+      <div class="browser-bar">
+        <div class="code-dots"><span></span><span></span><span></span></div>
+        <div class="browser-url">http://raspberrypi:8000</div>
+      </div>
+      <div class="browser-body">
+        <!-- Header -->
+        <div class="mock-header">
+          <span class="mock-title">CyberRaccoon</span>
+          <span class="mock-status-badge">&#9679; Ready</span>
+        </div>
+        <!-- Tabs -->
+        <div class="mock-tabs">
+          <span class="mock-tab active">Task</span>
+          <span class="mock-tab">Config</span>
+          <span class="mock-tab">Skills</span>
+          <span class="mock-tab">Status</span>
+          <span class="mock-tab">Debug</span>
+        </div>
+        <!-- Connection Row -->
+        <div class="mock-connections">
+          <div class="mock-conn-row">
+            <span class="mock-conn-label">Screen Capture:</span>
+            <span class="mock-conn-select">AirPlay</span>
+            <span class="mock-dot green"></span>
+            <span class="mock-conn-device">Connected</span>
+          </div>
+          <div class="mock-conn-row">
+            <span class="mock-conn-label">Mouse/Keyboard:</span>
+            <span class="mock-conn-select">Bluetooth</span>
+            <span class="mock-dot green"></span>
+            <span class="mock-conn-device">Connected</span>
+          </div>
+          <div class="mock-conn-row">
+            <span class="mock-conn-label">Target OS:</span>
+            <span class="mock-conn-select">Auto-detect</span>
+          </div>
+        </div>
+        <!-- Task Input -->
+        <div class="mock-task-bar">
+          <div class="mock-input">Open Chrome and search for CyberRaccoon</div>
+          <div class="mock-start-btn">Start</div>
+        </div>
+        <!-- Main Content -->
+        <div class="mock-main">
+          <!-- Screenshot -->
+          <div class="mock-screenshot">
+            <div class="mock-screen-placeholder">
+              <span>Live Screenshot Preview</span>
+              <span class="mock-screen-res">1280 &times; 720</span>
+            </div>
+          </div>
+          <!-- Step Log -->
+          <div class="mock-steps">
+            <div class="mock-step-header">Step Log</div>
+            <div class="mock-step"><span class="mock-step-n">#1</span> <span class="mock-step-action">click (512, 48)</span> <span class="mock-step-time">1.2s</span></div>
+            <div class="mock-step"><span class="mock-step-n">#2</span> <span class="mock-step-action">type &quot;CyberRaccoon&quot;</span> <span class="mock-step-time">0.8s</span></div>
+            <div class="mock-step"><span class="mock-step-n">#3</span> <span class="mock-step-action">key enter</span> <span class="mock-step-time">0.3s</span></div>
+            <div class="mock-step active"><span class="mock-step-n">#4</span> <span class="mock-step-action">scroll down</span> <span class="mock-step-time">0.5s</span></div>
+          </div>
+        </div>
+        <!-- Stats -->
+        <div class="mock-stats">4 steps &middot; 3.8s &middot; 2,150 in &middot; 680 out</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Features ── -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Features</p>
+      <h2 class="section-title">Everything you need</h2>
+      <p class="section-desc">A complete system for AI-powered computer control, built for flexibility and reliability.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#128248;</div>
+        <h3>4 Capture Sources</h3>
+        <p>HDMI-to-CSI bridge (TC358743), USB HDMI capture card, Raspberry Pi CSI camera (picamera2), or wireless AirPlay mirroring. Pick what fits your setup.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128268;</div>
+        <h3>2 HID Transports</h3>
+        <p>Wired USB HID Gadget or wireless Bluetooth HID. Go fully wireless with AirPlay + Bluetooth.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#129504;</div>
+        <h3>Multiple LLMs</h3>
+        <p>Anthropic, OpenAI, or any compatible API. Switch providers with a single flag.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#129489;</div>
+        <h3>Humanized Input</h3>
+        <p>B&eacute;zier curve mouse movement, variable typing rhythm, and random jitter. Three presets: subtle, normal, aggressive.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#127760;</div>
+        <h3>Web UI + CLI</h3>
+        <p>Manage tasks remotely via browser (FastAPI + WebSocket) or terminal REPL with autocompletion.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128218;</div>
+        <h3>Skills System</h3>
+        <p>Application-specific knowledge files that teach the AI domain expertise &mdash; like Blender workflows or app-specific shortcuts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Use Cases ── -->
+<section class="use-cases" id="use-cases">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Use Cases</p>
+      <h2 class="section-title">Where software agents fail</h2>
+      <p class="section-desc">CyberRaccoon operates at the hardware layer, so it works in scenarios that are impossible for any software-based agent.</p>
+    </div>
+    <div class="usecase-grid">
+      <div class="usecase-card">
+        <div class="usecase-number">01</div>
+        <h3>Bare Metal &amp; BIOS</h3>
+        <p>Configure BIOS settings, install an OS from scratch, flash firmware. No operating system is running &mdash; no software agent can exist. CyberRaccoon walks through the entire process from power-on to desktop.</p>
+        <span class="usecase-tag">Impossible for software agents</span>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-number">02</div>
+        <h3>Legacy &amp; Locked-Down Machines</h3>
+        <p>Factories running Windows XP, hospitals on ancient systems, air-gapped military networks, medical devices. Security policy forbids installing software &mdash; but they have a screen and a USB port.</p>
+        <span class="usecase-tag">Impossible for software agents</span>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-number">03</div>
+        <h3>Anti-Detection Automation</h3>
+        <p>Real USB HID hardware with humanized B&eacute;zier curves and typing rhythm. No browser fingerprint, no process to detect. Indistinguishable from a human to any detection system.</p>
+        <span class="usecase-tag">Advantage over software agents</span>
+      </div>
+    </div>
+    <div class="also-great">
+      <h4>Also great for</h4>
+      <div class="also-tags">
+        <span>Boot Recovery</span>
+        <span>Embedded &amp; Kiosk UIs</span>
+        <span>Cross-Platform Automation</span>
+        <span>End-to-End Testing</span>
+        <span>Remote IT Support</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Hardware ── -->
+<section class="hardware" id="hardware">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Hardware</p>
+      <h2 class="section-title">What you need</h2>
+      <p class="section-desc">A minimal shopping list to get started. Total cost under $120.</p>
+    </div>
+    <div class="hardware-table-wrap">
+      <table class="hardware-table">
+        <thead>
+          <tr><th>Item</th><th>Cost</th><th>Required?</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="item-icon">&#129294;</span> Raspberry Pi 5 (or 4B)</td>
+            <td>$60 &ndash; $80</td>
+            <td><span class="hw-required">Required</span></td>
+          </tr>
+          <tr>
+            <td><span class="item-icon">&#128250;</span> HDMI-to-CSI Bridge (TC358743)</td>
+            <td>$15 &ndash; $25</td>
+            <td><span class="hw-optional">Optional</span> &mdash; best-tested capture path; uses the Pi&rsquo;s CSI port, no USB needed</td>
+          </tr>
+          <tr>
+            <td><span class="item-icon">&#128248;</span> USB HDMI Capture Card</td>
+            <td>$10 &ndash; $20</td>
+            <td><span class="hw-optional">Optional</span> &mdash; alternative to the CSI bridge; not needed if using AirPlay</td>
+          </tr>
+          <tr>
+            <td><span class="item-icon">&#128268;</span> USB-C OTG Cable / Splitter</td>
+            <td>$5 &ndash; $15</td>
+            <td><span class="hw-optional">Optional</span> &mdash; not needed if using Bluetooth HID. On Pi 5, single-cable USB-C OTG is affected by a <code>dwc2</code> kernel bug; a USB power/data splitter cable is the documented workaround.</td>
+          </tr>
+          <tr class="hardware-total">
+            <td>Minimum (Pi only)</td>
+            <td>~$60</td>
+            <td>AirPlay capture + Bluetooth HID &mdash; macOS targets only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── Quick Start ── -->
+<section class="quickstart" id="quickstart">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Quick Start</p>
+      <h2 class="section-title">Up and running in minutes</h2>
+    </div>
+    <div class="code-block">
+      <div class="code-header">
+        <div class="code-dots"><span></span><span></span><span></span></div>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <div class="code-body">
+<pre><span class="comment"># One-command install on the Raspberry Pi.</span>
+<span class="comment"># Clones the repo, sets up a venv, installs the package, walks you through</span>
+<span class="comment"># hardware setup, and registers a systemd service that auto-starts the Web UI.</span>
+<span class="command">curl -sSL https://cyberraccoon.ai/install.sh | bash</span>
+
+<span class="comment"># When it finishes it prints the URL — open it in your browser:</span>
+<span class="comment">#   http://raspberrypi.local:8000</span>
+<span class="comment">#</span>
+<span class="comment"># 1. Status tab  → shows hardware setup status (re-run any missing piece from here)</span>
+<span class="comment"># 2. Config tab  → paste your API key (saved to ~/.cyberraccoon/config.yaml, 0o600)</span>
+<span class="comment"># 3. Task tab    → pick capture source + HID transport, type a goal, hit Start</span>
+
+<span class="comment"># Prefer the command line? See docs/user-guide.md for CLI usage.</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Disclaimer ── -->
+<section class="disclaimer">
+  <div class="container">
+    <div class="disclaimer-box">
+      <p><strong>Disclaimer:</strong> CyberRaccoon is an experimental open-source project provided "as-is" under the Apache 2.0 License. It is <strong>not intended for production use</strong>. The authors are not responsible for any loss, damage, or unintended consequences resulting from the use of this software. Use at your own risk.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">Cyber<span>Raccoon</span></div>
+    <p>AI-powered computer control from a Raspberry Pi.</p>
+    <div class="footer-links">
+      <a href="https://github.com/ChaoticPixelIO/cyberRaccoon" target="_blank">GitHub</a>
+      <a href="https://github.com/ChaoticPixelIO/cyberRaccoon/blob/main/LICENSE" target="_blank">Apache 2.0 License</a>
+      <a href="https://github.com/ChaoticPixelIO/cyberRaccoon/blob/main/docs/user-guide.md" target="_blank">Documentation</a>
+    </div>
+  </div>
+</footer>
+
+<!-- GitHub Star Button -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
